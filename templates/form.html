@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+
+{% block startupform %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<div class="reg-form" style="position: absolute;width: 52vw;
+position: absolute;
+top: 15vw;
+top: 4vw;
+      right: 36vw;
+      /* color: white; */
+      
+      font-weight: bold;">
+
+    <form method="post" action="/form">
+        {% csrf_token %}
+          
+        <div> <h1>Enter your Personal Details</h1></div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Your Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="name">
+  
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Contact number</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="contact">
+            {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Your email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="email">
+
+            <div class="form-check">
+
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Are you IITian</label>
+            <div>
+                <div class="input-group mb-3">
+                    
+                    <select class="form-select" name= "IITian"id="seeAnotherField">
+                      <option selected>Choose...</option>
+                      <option value="1">Yes</option>
+                      <option value="2">No</option>
+                      <!-- <option value="3">Three</option> -->
+                    </select>
+                  </div>
+            </div>
+        </div>
+            <div >
+                <div class="input-group mb-3" id ="otherFieldDiv" >
+                    <label for = "otherField" class="input-group-text" for="inputGroupSelect01">Hostel</label>
+                    <select class="form-select" id="otherField" name="hostel">
+                      <option selected>Choose...</option>
+                      <option value="1">Hostel 1</option>
+                      <option value="2">Hostel 2</option>
+                      <option value="3">Hostel 3</option>
+                      <option value="4">Hostel 4</option>
+                      <option value="5">Hostel 5</option>
+                      <option value="6">Hostel 6</option>
+                      <option value="7">Hostel 7</option>
+                      <option value="8">Hostel 8</option>
+                      <option value="9">Hostel 9</option>
+                      <option value="10">Hostel 10</option>
+                      <option value="11">Hostel 11</option>
+                      <option value="12">Hostel 12</option>
+                      <option value="13">Hostel 13</option>
+                      <option value="14">Hostel 14</option>
+                      <option value="15">Hostel 15</option>
+                      <option value="16">Hostel 16</option>
+                      <option value="17">Hostel 17</option>
+                      <option value="18">Hostel 18</option>
+                      <!-- <option value="1">Hostel 1</option> -->
+                      <!-- <option value="11">Hostel 1</option> -->
+                      
+                    </select>
+                  </div>
+            </div>
+
+        </div>
+        
+        <script src="./form.js"></script>
+        <div><h1>Tell us about your startup</h1></div>
+        <div>
+            <!-- startup name -->
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Your Startup Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="startupname">
+
+            <!-- sector -->
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Sector of you startup</label>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Sector</label>
+                <select class="form-select" id="inputGroupSelect01" name="sector">
+                  <option selected>Choose...</option>
+                  <option value="1">FMCG</option>
+                  <option value="2">FINTECH</option>
+                  <option value="3">EDTECH</option>
+                  <option value="4">CONSULTING</option>
+                  <option value="5">IT</option>
+                  <option value="6">ECOMMERCE</option>
+                  <option value="7">FOODTECH</option>
+                  <option value="8">HARDWARE</option>
+                  
+                  <!-- <option value="1">Hostel 1</option> -->
+                  <!-- <option value="11">Hostel 1</option> -->
+                  
+                </select>
+              </div>
+
+            <!-- decription -->
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Describe your startup</label>
+            <textarea name="desc" cols="90" rows="10"></textarea>
+
+            <label for="exampleInputEmail1" class="form-label" style="color: black;">Other Comments</label>
+            <textarea name="comments" cols="90" rows="4"></textarea>
+        </div>
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+    <a href="/"><button type="button" class="btn btn-warning" >Return</button></a>
+
+</div>
+
+
+{% endblock startupform %}
